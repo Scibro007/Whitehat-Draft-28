@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Heatmaps</title>
+
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="../js/map.js"></script>
+    <script type="text/javascript" src="../js/chart.js"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+
+<body>
+<div id="floating-panel">
+    <button onclick="toggleCarbon()">Carbon Monoxide (CO2)</button>
+    <button onclick="toggleTemperature()">Temperature</button>
+    <button onclick="toggleHumidity()">Humidity</button>
+    <button onclick="changeOpacity()">change opacity</button>
+    <button onclick="scanItemsFromDB()"><img src="../img/refresh.png" width="25"></button>
+</div>
+
+
+<div id="map"></div>
+
+<div class="container">
+
+    <h5>Statistics</h5>
+    <div class="row">
+        <div class="col">
+             <canvas id="chart_temp"></canvas>
+        </div>
+        <div class="col" style="background-color: whitesmoke">
+
+        </div>
+        <div class="col">
+            <canvas id="chart_humidity"></canvas>
+        </div>
+        <div class="col" style="background-color: lightblue">
+
+        </div>
+        <div class="col">
+            <canvas id="chart_carbon"></canvas>
+        </div>
+        <div class="col" style="background-color: lightgray">
+
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../js/chart.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFXxN0bYVHZyfnuV5oLc5pIc4VpN6t9lg&libraries=visualization&callback=initMap">
+</script>
+</body>
+</html>
